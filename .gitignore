@@ -1,0 +1,27 @@
+# Node dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build artifacts
+dist
+dist-ssr
+*.local
+
+# Editor directories
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment
+.env
+.env.local
+.env.production
+
+.vercel

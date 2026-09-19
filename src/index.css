@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Official Indian Government Portal Palette (NIC / GeM / MahaGov) */
+  --background: #f4f6fa;
+  --foreground: #0b2545;
+  --card: #ffffff;
+  --card-foreground: #0b2545;
+  --popover: #ffffff;
+  --popover-foreground: #0b2545;
+  
+  /* Deep Institutional Navy (MahaGov / NIC standard) */
+  --primary: #0b2545;
+  --primary-foreground: #ffffff;
+  --primary-dark: #07172c;
+  --primary-light: #163b6d;
+  
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0b2545;
+  --muted: #edf2f7;
+  --muted-foreground: #475569;
+  
+  /* Official Indian Saffron & Heritage Gold */
+  --accent: #b45309;
+  --accent-gold: #c59b27;
+  --accent-foreground: #ffffff;
+  --saffron: #ff9933;
+  --saffron-dark: #d97706;
+  --india-green: #138808;
+  
+  /* Government Gazette Red / Destructive */
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  
+  /* Crisp Government Form Borders */
+  --border: #cbd5e1;
+  --border-strong: #94a3b8;
+  --input: #cbd5e1;
+  --ring: #0b2545;
+  
+  /* Compliance & Statutory Statuses */
+  --success: #0f766e;
+  --success-foreground: #ffffff;
+  --amber-soft: #fffbeb;
+  
+  /* Standard government institutional radius (sharp, crisp, not bubbly) */
+  --radius: 0.25rem;
+}
+
+/* GIGW Official High Contrast Mode (Yellow on Black standard) */
+html.high-contrast {
+  --background: #000000;
+  --foreground: #ffff00;
+  --card: #0a0a0a;
+  --card-foreground: #ffff00;
+  --primary: #ffff00;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffff00;
+  --muted: #141414;
+  --muted-foreground: #00ffcc;
+  --accent: #00e676;
+  --accent-gold: #ffff00;
+  --accent-foreground: #000000;
+  --border: #ffff00;
+  --border-strong: #ffff00;
+  --input: #ffff00;
+  --ring: #00e676;
+  --success: #00e676;
+  --success-foreground: #000000;
+  --destructive: #ff5252;
+}
+
+@layer base {
+  body {
+    background-color: #f3f5f9;
+    background-image: 
+      radial-gradient(#cbd5e1 0.85px, transparent 0.85px),
+      radial-gradient(#cbd5e1 0.85px, #f3f5f9 0.85px);
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
+    color: var(--foreground);
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .govt-heading {
+    font-family: 'Libre Baskerville', Georgia, serif;
+  }
+}
+
+/* Institutional Sovereign Gradients */
+.bg-navy-grad {
+  background: linear-gradient(135deg, #07172c 0%, #0b2545 60%, #163b6d 100%);
+}
+
+.bg-gold-grad {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #f59e0b 100%);
+}
+
+.bg-emerald-grad {
+  background: linear-gradient(135deg, #064e3b 0%, #047857 60%, #059669 100%);
+}
+
+/* Authentic Government Official Stamp */
+.govt-stamp {
+  border: 2px dashed #b91c1c;
+  color: #b91c1c;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem;
+  display: inline-block;
+  transform: rotate(-3deg);
+  border-radius: 2px;
+  user-select: none;
+  box-shadow: 0 0 0 1px rgba(185, 28, 28, 0.15);
+}
+
+.govt-stamp-green {
+  border: 2px dashed #0f766e;
+  color: #0f766e;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem;
+  display: inline-block;
+  transform: rotate(-2deg);
+  border-radius: 2px;
+  user-select: none;
+  box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.15);
+}
+
+/* Sovereign Institutional Card Component */
+.govt-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px 0 rgba(11, 37, 69, 0.05), 0 1px 2px -1px rgba(11, 37, 69, 0.05);
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.govt-card:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 4px 12px 0 rgba(11, 37, 69, 0.08);
+}
+
+/* Security Guilloche & Watermark Textures */
+.govt-watermark {
+  background-image: radial-gradient(circle at center, rgba(11, 37, 69, 0.035) 0%, transparent 75%);
+}
+
+.govt-paper-texture {
+  background-color: #ffffff;
+  background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+  background-size: 16px 16px;
+}
+
+/* Institutional Tabular Data Styling */
+.govt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.govt-table th {
+  background-color: #0b2545;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #163b6d;
+  font-size: 0.75rem;
+}
+
+.govt-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+}
+
+.govt-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.govt-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Official Print Stylesheet for A4 Government Order */
+@page {
+  size: A4 portrait;
+  margin: 12mm 15mm 12mm 15mm;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  header, nav, footer, #main-content, .no-print, .print-hidden, .print\:hidden, button:not(.allow-print) {
+    display: none !important;
+  }
+  dialog, [role="dialog"] {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  [role="dialog"] > div,
+  [role="dialog"] div {
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+  .govt-watermark {
+    background-image: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  /* Ensure borders and stamps render crisp in black/color print */
+  .govt-stamp, .govt-stamp-green, table, th, td {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* High Contrast Class Overrides for GIGW 3.0 */
+html.high-contrast body,
+html.high-contrast .bg-white,
+html.high-contrast .bg-card {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+html.high-contrast .bg-\[\#0b2545\],
+html.high-contrast .bg-\[\#07172c\],
+html.high-contrast .bg-\[\#edf2f7\],
+html.high-contrast .bg-slate-50,
+html.high-contrast .bg-slate-100,
+html.high-contrast .bg-slate-200,
+html.high-contrast .bg-muted,
+html.high-contrast .bg-muted\/30,
+html.high-contrast .bg-muted\/40,
+html.high-contrast .bg-muted\/50 {
+  background-color: #0a0a0a !important;
+  color: #ffff00 !important;
+}
+html.high-contrast .text-\[\#0b2545\],
+html.high-contrast .text-primary,
+html.high-contrast .text-slate-900,
+html.high-contrast .text-slate-800,
+html.high-contrast .text-slate-700,
+html.high-contrast .text-slate-600 {
+  color: #ffff00 !important;
+}
+html.high-contrast .text-muted-foreground,
+html.high-contrast .text-slate-500,
+html.high-contrast .text-slate-400 {
+  color: #00ffcc !important;
+}
+html.high-contrast .border-slate-400,
+html.high-contrast .border-slate-300,
+html.high-contrast .border-slate-200,
+html.high-contrast .border-border {
+  border-color: #ffff00 !important;
+}
+html.high-contrast select,
+html.high-contrast input {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+
