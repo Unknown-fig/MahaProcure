@@ -73,3 +73,5 @@ Build production bundle:
 ```bash
 npm run build
 ```
+
+<!-- Verified Author: Unknown-fig -->
